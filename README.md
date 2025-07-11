@@ -19,7 +19,7 @@ GROUP BY productid
 ORDER BY Total_Units_Sold DESC;
 
 ### 2. Product Category with Highest Sales Volume Last Month
-
+```sql
 SELECT p.productcategory, SUM(s.inventoryquantity) AS Highest_Sales_Volume
 FROM sales s
 JOIN product p ON p.productid = s.productid
@@ -29,14 +29,14 @@ ORDER BY Highest_Sales_Volume DESC
 LIMIT 1;
 
 ### 3.  Correlation of Inflation Rate with Sales Volume
-
+```sql
 SELECT s.sales_year, s.sales_month, AVG(f.inflationrate) AS Avg_InflationRate, SUM(s.inventoryquantity) AS Sales_Volume
 FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
 GROUP BY s.sales_year, s.sales_month;
 
 ### 4. Monthly Correlation of Inflation Rate and Sales Quantity
-
+```sql
 SELECT s.sales_year, s.sales_month, AVG(f.inflationrate) AS Avg_InflationRate, SUM(s.inventoryquantity) AS Sales_Volume
 FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
@@ -45,7 +45,7 @@ GROUP BY s.sales_year, s.sales_month
 ORDER BY s.sales_year, s.sales_month;
 
 ### 5. Impact of Promotions on Sales Quantity
-
+```sql
 SELECT p.productcategory, ROUND(AVG(s.inventoryquantity)) AS Avg_Sales_WithoutPromotion, p.promotions
 FROM sales s
 JOIN product p ON p.productid = s.productid
@@ -59,7 +59,7 @@ WHERE p.promotions = 'Yes'
 GROUP BY p.productcategory, p.promotions;
 
 ### 6. Average Sales Quantity per Product Category
-
+```sql
 SELECT p.productcategory, ROUND(AVG(s.inventoryquantity)) AS Avg_Sales
 FROM sales s
 JOIN product p ON p.productid = s.productid
@@ -67,7 +67,7 @@ GROUP BY p.productcategory
 ORDER BY Avg_Sales DESC;
 
 ### 7. Effect of GDP on Total Sales Volume
-
+```sql
 SELECT s.sales_year, SUM(f.gdp), SUM(s.inventoryquantity) AS Total_Sales_Volume
 FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
@@ -75,7 +75,7 @@ GROUP BY s.sales_year
 ORDER BY Total_Sales_Volume DESC;
 
 ### 8. Top 10 Best-Selling Product SKUs
-
+```sql
 SELECT productid, SUM(inventoryquantity) AS Total_Sales
 FROM sales
 GROUP BY productid
@@ -83,7 +83,7 @@ ORDER BY Total_Sales DESC
 LIMIT 10;
 
 ### 9. Seasonal Factors Influence on Sales Quantities
-
+```sql
 SELECT p.productcategory, SUM(s.inventoryquantity) AS Total_Sales, f.seasonalfactor
 FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
