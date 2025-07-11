@@ -1,3 +1,7 @@
+
+### SQL Queries and Codes
+
+```markdown
 # SQL Capstone Project: T.T Inc.'s Inventory Optimization Journey
 
 ## Overview
@@ -17,9 +21,10 @@ SELECT productid, SUM(inventoryquantity) AS Total_Units_Sold
 FROM sales
 GROUP BY productid
 ORDER BY Total_Units_Sold DESC;
+```
 
 ### 2. Product Category with Highest Sales Volume Last Month
-sql
+```sql
 SELECT p.productcategory, SUM(s.inventoryquantity) AS Highest_Sales_Volume
 FROM sales s
 JOIN product p ON p.productid = s.productid
@@ -27,17 +32,15 @@ WHERE s.sales_year = '2021' AND s.sales_month = '11'
 GROUP BY p.productcategory
 ORDER BY Highest_Sales_Volume DESC
 LIMIT 1;
+```
 
----
-
-### 3.  Correlation of Inflation Rate with Sales Volume
+### 3. Correlation of Inflation Rate with Sales Volume
 ```sql
 SELECT s.sales_year, s.sales_month, AVG(f.inflationrate) AS Avg_InflationRate, SUM(s.inventoryquantity) AS Sales_Volume
 FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
 GROUP BY s.sales_year, s.sales_month;
-
----
+```
 
 ### 4. Monthly Correlation of Inflation Rate and Sales Quantity
 ```sql
@@ -47,8 +50,7 @@ JOIN factors f ON f.salesdate = s.salesdate
 WHERE s.salesdate >= (CURRENT_DATE - INTERVAL '1 year')
 GROUP BY s.sales_year, s.sales_month
 ORDER BY s.sales_year, s.sales_month;
-
----
+```
 
 ### 5. Impact of Promotions on Sales Quantity
 ```sql
@@ -63,8 +65,7 @@ FROM sales s
 JOIN product p ON p.productid = s.productid
 WHERE p.promotions = 'Yes'
 GROUP BY p.productcategory, p.promotions;
-
----
+```
 
 ### 6. Average Sales Quantity per Product Category
 ```sql
@@ -73,8 +74,7 @@ FROM sales s
 JOIN product p ON p.productid = s.productid
 GROUP BY p.productcategory
 ORDER BY Avg_Sales DESC;
-
----
+```
 
 ### 7. Effect of GDP on Total Sales Volume
 ```sql
@@ -83,8 +83,7 @@ FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
 GROUP BY s.sales_year
 ORDER BY Total_Sales_Volume DESC;
-
----
+```
 
 ### 8. Top 10 Best-Selling Product SKUs
 ```sql
@@ -93,8 +92,7 @@ FROM sales
 GROUP BY productid
 ORDER BY Total_Sales DESC
 LIMIT 10;
-
----
+```
 
 ### 9. Seasonal Factors Influence on Sales Quantities
 ```sql
@@ -103,8 +101,7 @@ FROM sales s
 JOIN factors f ON f.salesdate = s.salesdate
 JOIN product p ON p.productid = s.productid
 GROUP BY p.productcategory, f.seasonalfactor;
-
----
+```
 
 ### Insights and Recommendations
 
@@ -145,4 +142,6 @@ The following insights were derived from the SQL queries executed on the sales a
 
 ## Conclusion
 This project provided valuable insights into T.T Inc.'s inventory management challenges and opportunities. By leveraging data-driven strategies, the company can optimize inventory levels, improve sales performance, and enhance customer satisfaction.
+
+```
 
