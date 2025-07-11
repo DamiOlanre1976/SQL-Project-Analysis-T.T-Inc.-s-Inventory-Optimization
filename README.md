@@ -12,7 +12,7 @@ This project focuses on optimizing inventory management for T.T Inc., a leading 
 The following SQL queries were executed to extract meaningful insights from the datasets:
 
 ### 1. Total Units Sold per Product SKU
-```sql
+
 SELECT productid, SUM(inventoryquantity) AS Total_Units_Sold
 FROM sales
 GROUP BY productid
