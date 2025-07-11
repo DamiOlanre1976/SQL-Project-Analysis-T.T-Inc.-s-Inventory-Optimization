@@ -1,5 +1,4 @@
 
-```markdown
 # SQL Capstone Project: T.T Inc.'s Inventory Optimization Journey
 
 ## Overview
