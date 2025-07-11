@@ -140,10 +140,11 @@ The following insights were derived from the SQL queries executed on the sales a
 ## Conclusion
 This project provided valuable insights into T.T Inc.'s inventory management challenges and opportunities. By leveraging data-driven strategies, the company can optimize inventory levels, improve sales performance, and enhance customer satisfaction.
 
-```
+
 ## 👨‍💻 Author
 
 **[Damilola Lasode]**  
 📧 [damilolalasode10@gmail.com]  
 🌐 GitHub: [https://github.com/DamiOlanre1976](https://github.com/DamiOlanre1976)
 
+```
