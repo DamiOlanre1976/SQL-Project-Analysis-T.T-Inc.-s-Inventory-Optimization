@@ -101,7 +101,6 @@ JOIN product p ON p.productid = s.productid
 GROUP BY p.productcategory, f.seasonalfactor;
 ```
 
-### Insights and Recommendations
 
 
 # Insights and Recommendations for T.T Inc.'s Inventory Optimization Journey
