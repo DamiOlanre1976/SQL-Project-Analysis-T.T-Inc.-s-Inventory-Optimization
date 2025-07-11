@@ -1,6 +1,4 @@
 
-### SQL Queries and Codes
-
 ```markdown
 # SQL Capstone Project: T.T Inc.'s Inventory Optimization Journey
 
@@ -14,6 +12,7 @@ This project focuses on optimizing inventory management for T.T Inc., a leading 
 
 ## SQL Queries
 The following SQL queries were executed to extract meaningful insights from the datasets:
+
 
 ### 1. Total Units Sold per Product SKU
 ```sql
