@@ -12,14 +12,14 @@ This project focuses on optimizing inventory management for T.T Inc., a leading 
 The following SQL queries were executed to extract meaningful insights from the datasets:
 
 ### 1. Total Units Sold per Product SKU
-
+```sql
 SELECT productid, SUM(inventoryquantity) AS Total_Units_Sold
 FROM sales
 GROUP BY productid
 ORDER BY Total_Units_Sold DESC;
 
 ### 2. Product Category with Highest Sales Volume Last Month
-```sql
+sql
 SELECT p.productcategory, SUM(s.inventoryquantity) AS Highest_Sales_Volume
 FROM sales s
 JOIN product p ON p.productid = s.productid
