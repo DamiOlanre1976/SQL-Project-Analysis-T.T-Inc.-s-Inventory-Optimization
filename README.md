@@ -103,7 +103,7 @@ GROUP BY p.productcategory, f.seasonalfactor;
 
 ### Insights and Recommendations
 
-```markdown
+
 # Insights and Recommendations for T.T Inc.'s Inventory Optimization Journey
 
 ## Insights
